@@ -74,7 +74,7 @@ Before starting, ensure you have:
 
 3. **Clone Workshop Repository**
    ```bash
-   git clone https://github.com/[your-username]/CMB-fitting-workshop.git
+   git clone https://github.com/KSaid-1/CMB-fitting-workshop.git
    cd CMB-fitting-workshop
    ```
 
@@ -124,7 +124,7 @@ jupyter notebook CAMB_Introduction.ipynb
 3. **Clone GitHub Repository**
    ```bash
    cd ~/Documents
-   git clone https://github.com/[your-username]/CMB-fitting-workshop.git
+   git clone https://github.com/KSaid-1/CMB-fitting-workshop.git
    cd CMB-fitting-workshop
    ```
    
