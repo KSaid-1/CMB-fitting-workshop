@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains materials for PHYS4080 Project 2, focused on understanding how different cosmological parameters change the observable Universe and how we can use observations to reverse-engineer our cosmological model.
+This repository contains materials for PHYS4080 Project 3, focused on understanding how different cosmological parameters change the observable Universe and how we can use observations to reverse-engineer our cosmological model.
 
 Our current understanding of cosmology is based on the **Flat Λ Cold Dark Matter Model (ΛCDM)**, which assumes:
 - The Universe is **flat** (no intrinsic curvature, Ωk = 0)
@@ -41,13 +41,13 @@ CAMB has been used to analyze data from the Planck satellite and virtually every
 ## Prerequisites
 
 ### Hardware Requirements
-- For personal laptops: **gfortran-6** or higher must be installed
-- Access to SMP Teaching server (recommended for workshop)
+- Personal computer with internet access
+- Access to SMP Teaching server (alternative option)
 
 ### Software Requirements
 - Python 3.7+
 - Anaconda distribution
-- GCC/Gfortran 8.3.1+ (handled automatically on SMP server)
+- GCC/Gfortran 8.3.1+ (handled automatically on SMP server and via conda-forge for personal computers)
 
 ## Setup Instructions
 
@@ -58,38 +58,57 @@ Before starting, ensure you have:
 
 ### Option 1: Personal Computer Setup
 
-1. **Verify gfortran Installation**
-   ```bash
-   gfortran --version  # Must be version 6 or higher
-   ```
-   
-   If gfortran is not installed or version is below 6:
-   - **macOS**: Install via Homebrew: `brew install gfortran`
-   - **Windows**: Install via MinGW-w64 or use Windows Subsystem for Linux (WSL)
-   - **Linux**: Install via package manager: `sudo apt-get install gfortran` (Ubuntu/Debian) or `sudo yum install gcc-gfortran` (CentOS/RHEL)
+1. **Install Anaconda**
 
-2. **Install Anaconda (if not already installed)**
-   - Download from [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
-   - Follow installation instructions for your operating system
+   **macOS:**
+   - Download the macOS installer from [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
+   - Double-click the downloaded `.pkg` file and follow the installer prompts
+   - Restart your terminal or run `source ~/.bash_profile` (or `source ~/.zshrc` for zsh)
+   - Verify installation: `conda --version`
 
-3. **Clone Workshop Repository**
+   **Windows:**
+   - Download the Windows installer from [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
+   - Run the downloaded `.exe` file as administrator
+   - During installation, check "Add Anaconda to my PATH environment variable" (optional but recommended)
+   - Open Command Prompt or Anaconda Prompt
+   - Verify installation: `conda --version`
+
+   **Linux:**
+   - Download the Linux installer from [https://www.anaconda.com/products/distribution](https://www.anaconda.com/products/distribution)
+   - Open terminal and navigate to download directory
+   - Make installer executable and run:
+     ```bash
+     chmod +x Anaconda3-*-Linux-x86_64.sh
+     bash Anaconda3-*-Linux-x86_64.sh
+     ```
+   - Follow prompts, accept license, and choose installation directory
+   - When asked "Do you wish the installer to initialize Anaconda3", type "yes"
+   - Restart terminal or run `source ~/.bashrc`
+   - Verify installation: `conda --version`
+
+2. **Clone Workshop Repository**
    ```bash
    git clone https://github.com/KSaid-1/CMB-fitting-workshop.git
    cd CMB-fitting-workshop
    ```
 
-4. **Create and Configure Conda Environment**
+3. **Create and Configure Conda Environment**
    ```bash
-   # Create dedicated environment
+   # Create dedicated environment with Python 3.8
    conda create --name CMB_Project python=3.8
    
    # Activate environment
    conda activate CMB_Project
+
+   # To deactivate an active environment, use
+   conda deactivate
    
-   # Install required packages
-   conda install -c conda-forge camb
-   pip install numpy scipy jupyter chainconsumer
+   # Install required packages (CAMB from conda-forge includes Fortran compiler)
+   conda install -c conda-forge camb numpy scipy jupyter
+   pip install chainconsumer
    ```
+
+   **Note**: The conda-forge build of CAMB already includes a Fortran compiler during packaging, so you don't need to install gfortran separately. This ensures version compatibility and keeps everything within the conda environment.
 
 #### Daily Workflow (Personal Computer)
 Each time you want to run the notebooks:
@@ -230,7 +249,7 @@ After setup, your project directory should contain:
 For technical issues:
 1. Check that all installation steps were followed correctly
 2. Verify environment activation before running notebooks
-3. Ensure gfortran version compatibility
+3. Ensure conda environment is properly configured with CAMB from conda-forge
 4. Contact instructor for server-specific problems
 
 ## Learning Outcomes
