@@ -1,0 +1,44 @@
+# Jupyter Notebook activity solutions (not for students)
+CAMB_Plotting_Activity.ipynb
+*solution*.ipynb
+*Solution*.ipynb
+*SOLUTION*.ipynb
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data files (if large)
+*.fits
+*.h5
+*.hdf5
+
+# Output plots and results
+figures/
+plots/
+results/
