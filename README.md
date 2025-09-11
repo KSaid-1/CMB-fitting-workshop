@@ -56,6 +56,83 @@ Before starting, ensure you have:
 - Git installed on your system
 - Access to the workshop GitHub repository
 
+#### Installing Git
+
+**macOS:**
+- **Option 1 (Recommended)**: Install via Homebrew
+  ```bash
+  # Install Homebrew if you don't have it
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  
+  # Install Git
+  brew install git
+  ```
+- **Option 2**: Download from [git-scm.com](https://git-scm.com/download/mac)
+- **Option 3**: Install Xcode Command Line Tools: `xcode-select --install`
+
+**Windows:**
+- Download Git for Windows from [git-scm.com](https://git-scm.com/download/win)
+- Run the installer and follow the setup wizard
+- Choose "Git from the command line and also from 3rd-party software" when prompted
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt update
+sudo apt install git
+```
+
+**Linux (CentOS/RHEL/Fedora):**
+```bash
+# For CentOS/RHEL
+sudo yum install git
+
+# For Fedora
+sudo dnf install git
+```
+
+**Verify Git Installation:**
+```bash
+git --version
+```
+You should see output like: `git version 2.x.x`
+
+#### Basic Git Commands for Getting Started
+
+Here are the essential Git commands you'll need for this workshop:
+
+```bash
+# Clone the workshop repository (download it to your computer)
+git clone https://github.com/KSaid-1/CMB-fitting-workshop.git
+
+# Navigate into the project directory
+cd CMB-fitting-workshop
+
+# Check the status of your files
+git status
+
+# See what files have been modified
+git diff
+
+# Add changes to staging area
+git add filename.ipynb
+
+# Commit your changes with a message
+git commit -m "Your descriptive message here"
+
+# Push changes to GitHub (if you have write access)
+git push
+
+# Pull latest changes from GitHub
+git pull
+```
+
+**Quick Reference:**
+- `git clone <url>` - Download a repository
+- `git status` - See what files have changed
+- `git add <file>` - Stage changes for commit
+- `git commit -m "message"` - Save changes with a message
+- `git pull` - Get latest changes from remote repository
+
 ### Option 1: Personal Computer Setup
 
 1. **Install Anaconda**
