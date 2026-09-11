@@ -1,0 +1,9 @@
+# Normalise line endings to LF in the repository so students on Windows, macOS and Linux
+# don't see whole-file diffs caused purely by CRLF vs LF. All files currently committed
+# already use LF, so this changes nothing today - it only prevents future churn.
+* text=auto eol=lf
+
+# Never treat these as text - they must round-trip byte for byte.
+*.pdf binary
+*.png binary
+*.jpg binary
